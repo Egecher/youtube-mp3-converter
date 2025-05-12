@@ -1,6 +1,7 @@
 import yt_dlp
 import tkinter as tk
 from tkinter import messagebox
+import re
 
 def download_youtube_video_as_mp3(youtube_url):
     ydl_opts = {
@@ -26,10 +27,14 @@ def download_youtube_video_as_mp3(youtube_url):
 
 def start_download():
     youtube_link = url_entry.get()
-    if youtube_link:
-        download_youtube_video_as_mp3(youtube_link)
-    else:
+    youtube_pattern = r'(https?://)?(www\.)?(youtube\.com|youtu\.be)/.+'
+
+    if not youtube_link:
         messagebox.showwarning("Uyarı", "Lütfen bir YouTube URL'si girin.")
+    elif not re.match(youtube_pattern, youtube_link):
+        messagebox.showerror("Hatalı URL", "Lütfen geçerli bir YouTube URL'si girin.")
+    else:
+        download_youtube_video_as_mp3(youtube_link)
 
 # GUI'yi başlat
 root = tk.Tk()
