@@ -35,7 +35,7 @@ yt-dlp -U
 
 ## ▶️ Kullanım
 
-> [Programın detaylı anlatım ve kullanımını izlemek için tıklayınız.](https://youtu.be/)
+> [Programın detaylı anlatım ve kullanımını izlemek için tıklayınız.](https://www.youtube.com/watch?v=1YQlLtoWMpU)
 
 ```bash
 python main.py
